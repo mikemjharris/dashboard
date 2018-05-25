@@ -13,7 +13,7 @@
     <div id="app">
 			<ul>
 				<li v-for="(project, project_name) in projects">
-					{{ project_name }} : {{ project.url }} {{ project.status}}  
+					<a href="{{ project.url}}" target="_blank"> {{ project_name }} : {{ project.url }}</a> {{ project.status}}  
 				</li>
 			</ul>	
 
