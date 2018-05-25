@@ -12,8 +12,8 @@
 		<h1><%= data.title %></h4>
     <div id="app">
 			<ul>
-				<li v-for="project in projects">
-					{{ project.name}}
+				<li v-for="(project, project_name) in projects">
+					{{ project_name }} : {{ project.url }} {{ project.status}}  
 				</li>
 			</ul>	
 
