@@ -10,6 +10,7 @@ var app = new Vue({
 				status: {},
 				url: "https://www.mikemjharris.com",
 				versionEndpoint: "/version.json"
+
 			},
 
 			blog: {
@@ -25,19 +26,14 @@ var app = new Vue({
 				let project = this.projects[project_name];
 				Promise.all([axios.get(project.url + project.versionEndpoint), project_name])
 				.then((response)  =>  {
-					console.log('here');
-					console.log(response[1], response[0]);
-
-					this.projects[response[1]].status = response[0].data
-
+					this.projects[response[1]].status = response[0].data;
 				}, (error)  =>  {
-					this.loading = false;
+					this.projects[response[1]].error = true;
 				})
 			}
 		}
 	},
 	beforeMount() {
-		console.log('hi');
 		this.loadData();
 	}
 });

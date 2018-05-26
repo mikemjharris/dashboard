@@ -11,12 +11,25 @@
 <body>
 		<h1><%= data.title %></h4>
     <div id="app">
-			<ul>
-				<li v-for="(project, project_name) in projects">
-					<a href="{{ project.url}}" target="_blank"> {{ project_name }} : {{ project.url }}</a> {{ project.status}}  
-				</li>
-			</ul>	
-
+			<div class="container">
+				<div class="header">
+					<div>Project</div>
+					<div>Url</div>
+					<div>Status</div>
+				</div>
+				<div class="row" v-for="(project, project_name) in projects">
+					<div>{{ project_name }}</div> 
+					<a :href="project.url" target="_blank"> {{ project.url }}</a>
+					<div class="status" v-if="project.error"> 
+							<div>Error - no status</div>
+					</div>
+					<div class="status" v-else> 
+							<div>{{ project.status.commit}} </div>
+							<div>{{ project.status.branch}} </div>
+							<div>{{ project.status.deploy_date}} </div>
+					</div>
+				</div>
+			</div>
 		</div>
     
 		<%- include('partials/footer') %>
