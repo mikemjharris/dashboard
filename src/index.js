@@ -1,5 +1,4 @@
-
-import './main.scss'
+import './main.scss';
 import axios from 'axios';
 
 var app = new Vue({
