@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./server/server.js",
-    "build": "webpack",
-    "all": "webpack && node ./server/server.js"
+    "build-prod": "NODE_ENV=production webpack --config webpack/prod.config.js",
+    "all": "webpack && node ./server/server.js",
+    "start-dev": "node ./server/server.js | NODE_ENV=development webpack --config webpack/dev.config.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -15,8 +16,10 @@
     "ejs": "^2.5.8",
     "express": "~4.16.3",
     "morgan": "~1.0.0",
+    "path": "^0.12.7",
     "static-favicon": "~1.0.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "webpack-merge": "^4.1.2"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
