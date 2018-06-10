@@ -1,21 +1,13 @@
-Seed project
+Dashboard
 ========================
 
-Base for future node projects.  
+Project to monitor all other projects.
 
-Express project. Built using node and express on the backend with ejs templating.
+Node express with vue on the front end
 
-Frontend sass and built using webpack.  React and/or Vue to be added.
+`npm install && npm start-dev` To run locally.
 
-`npm install`
-`npm run all`
+To run in prod follow the steps in the `Dockerfile` or just build it and run as a docker container
 
-Runs app on port 8001
-
-
-
-To build docker image:  `docker build . -t seed-project` 
-
-To run docker container: `docker run -p 8001:8001 seed-project` 
-
-
+`docker build . -t dashboard`
+`docker run -p 8000:8000 -name dashboard dashboard`
