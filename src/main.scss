@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-  color: hsla(0, 80%, 60%, 1);
+  color: hsla(120, 60%, 60%, 1);
 }
 
 #app {
@@ -31,10 +31,25 @@ h1 {
 
 .header, .row{
   display: grid;
-  grid-template-columns: 150px 300px auto;
+  grid-template-columns: 300px auto;
   grid-template-rows: auto;
   grid-column-gap: 10px;
   grid-row-gap: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    display: none;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 5px;
+      background: hsla(120, 60%, 60%, 1);
+    }
+  }
 }
 
 .header {
