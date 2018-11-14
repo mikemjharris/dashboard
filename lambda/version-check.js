@@ -3,18 +3,19 @@
 const request = require('request');
 
 const endpoints = [
-  "https://blog.mikemjharris.com/version.json",
-  "https://www.mikemjharris.com/version.json"
+  "https://blog.mikemjharris.com",
+  "https://www.mikemjharris.com"
 ]
 
 
 const makeCall = (endpoint) => {
   return new Promise((resolve, reject) => {
-    request(endpoint, function (error, response, body) {
+    request(endpoint + '/version.json', function (error, response, body) {
       if (!error && response.statusCode == 200) {
         resolve({
-          endpoint: endpoint,
-          ...JSON.parse(body)
+          url: endpoint,
+          versionEndpoint: 'version.json',
+          status: JSON.parse(body)
         });
       }
       reject(error);
