@@ -48,6 +48,9 @@ h1 {
     a {
       padding: 5px;
       background: hsla(120, 60%, 60%, 1);
+      &.error {
+        background: hsla(0, 60%, 60%,1);
+      }
     }
   }
 }
@@ -55,5 +58,6 @@ h1 {
 .header {
   font-weight: 700;
 }
-
-
+.error {
+  background: hsla(0, 60%, 60%,1);
+}
