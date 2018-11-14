@@ -4,7 +4,8 @@ const request = require('request');
 
 const endpoints = [
   "https://blog.mikemjharris.com",
-  "https://www.mikemjharris.com"
+  "https://www.mikemjharris.com",
+  "https://books.mikemjharris.com"
 ]
 
 
