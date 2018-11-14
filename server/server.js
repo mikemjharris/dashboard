@@ -22,10 +22,8 @@ app.set('view engine', 'ejs')
 
 require('./routes/main')(app);
 
-// blog home page
 app.get('/', (req, res) => {
-  // render `home.ejs` with the list of posts
-  res.render('home', { data: { title: 'My Seed Project'}})
+  res.render('index.html', { data: { title: 'My Seed Project'}})
 })
 
 
