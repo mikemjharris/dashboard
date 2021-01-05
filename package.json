@@ -9,7 +9,7 @@
     "start-dev": "node ./server/server.js | NODE_ENV=development webpack --config webpack/dev.config.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.3",
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.0.1",
