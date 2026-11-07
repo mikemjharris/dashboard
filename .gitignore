@@ -1,10 +1,2 @@
 node_modules
-bower_components
-npm-debug.log
-public/npm-debug.log
-public/stylesheets/canvas_game.css
-
-public/dist
-dist
-lambda.zip
-
+.DS_Store
