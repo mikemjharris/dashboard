@@ -1,13 +1,14 @@
 Dashboard
 ========================
 
-Project to monitor all other projects.
+Shows what's deployed on each of my sites: https://www.mikemjharris.com/dashboard/
 
-Node express with vue on the front end
+Each site's deploy workflow writes a `version.json` (commit, branch, deploy time),
+served with a CORS header. This page is plain HTML and JavaScript that fetches
+them all from the browser; there's no build step or backend.
 
-`npm install && npm start-dev` To run locally.
-
-To run in prod follow the steps in the `Dockerfile` or just build it and run as a docker container
-
-`docker build . -t dashboard`
-`docker run -p 8000:8000 -name dashboard dashboard`
+To run locally: `npx serve .` from the repo root and open http://localhost:3000/site/
+(asset paths are absolute, so it's easiest to check on the live site), or just edit
+`site/` and merge: `.github/workflows/deploy.yml` uploads it to `dashboard/` in the
+www bucket. The bucket and the deploy role are in
+[mikemjharris/infra](https://github.com/mikemjharris/infra).
